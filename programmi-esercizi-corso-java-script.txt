@@ -1,0 +1,546 @@
+var postimax=30;
+occupati=0;
+
+stop1=Number(prompt("Station 1, wie viele Passagiere?"));
+
+if(stop1>postimax)
+{
+alert((stop1-postimax)+" muessen laufen");
+occupati=30;
+}
+else {
+occupati=stop1;}
+
+
+stop2=Number(prompt("Station 2, wie viele Passagiere?"));
+if(stop2>(postimax-occupati))
+{
+alert((stop2-(postimax-occupati))+" muessen laufen");
+occupati=30;
+}
+else {
+occupati=stop2+stop1;}
+
+
+stop3=Number(prompt("Station 3, wie viele Passagiere?"));
+if(stop3>(postimax-occupati))
+{
+alert((stop3-(postimax-occupati))+" muessen laufen");
+occupati=30;
+}
+else {
+occupati=stop2+stop1+stop3;}
+
+
+
+------------------------------
+
+let stars="";
+let counter=0;
+while (counter<9)
+{
+stars=stars+"*";
+console.log(stars)
+counter++;
+}
+
+
+-------------------------------
+
+let utente=Number(prompt("give me a number"));
+count=0;
+
+while(count<=utente){
+console.log(count);
+count++;
+utente=Number(prompt("give me a number"));
+if (utente==10){
+break;
+}
+}
+
+
+-----------------------
+triangle loop
+
+
+for (toPrint="#";toPrint.length<8;toPrint=toPrint+"#")
+{
+console.log(toPrint);
+}
+
+-------------------------
+Write a program that uses console.log to print all the numbers from 1 to 100,
+with two exceptions. For numbers divisible by 3, print "Fizz" instead of the
+number, and for numbers divisible by 5 (and not 3), print "Buzz" instead.
+When you have that working, modify your program to print "FizzBuzz" for
+numbers that are divisible by both 3 and 5 (and still print "Fizz" or "Buzz"
+for numbers divisible by only one of those).
+(This is actually an interview question that has been claimed to weed out
+a significant percentage of programmer candidates. So if you solved it, your
+labor market value just went up.)
+
+
+
+for (let number=1; number<101; number++)
+{
+if (number%3==0)
+{
+console.log("Fizz");
+}
+else if (number%5==0)
+{
+console.log("Buzz");
+}
+else if (number%5!=0 && number%3!=0)
+{
+console.log(number);
+}
+
+}
+----------------
+
+modification Fizzbuzz:
+----------------
+
+for (let number=1; number<101; number++)
+{
+	if (number%3==0 && number%5!=0)
+	{
+		console.log("Fizz");
+	}
+	else if (number%5==0 && number%3!=0)
+	{
+		console.log("Buzz");
+	}
+	else if (number%5!=0 && number%3!=0)
+	{
+		console.log(number);
+	}
+	else if (number%5==0 && number%3==0)
+	{
+		console.log("Fizzbuzz");
+	}
+}
+
+-------------------------------
+for (let claudiosalute=0; claudiosalute<101; claudiosalute=claudiosalute+10)
+{
+	if (claudiosalute<=99)
+	{
+		alert("Daje Cla, ancora un goccetto di medicina! La tua salute è al"+(claudiosalute)+" %");
+	}
+	else if (claudiosalute==100)
+	{
+		alert("SEI UN GRANDEEEE CLA!");
+	}
+	
+}
+-------------------------------
+
+chess
+
+Write a program that creates a string that represents an 8×8 grid, using newline characters to separate lines. 
+At each position of the grid there is either a space or a "#" character. The characters should form a chessboard.
+
+Passing this string to console.log should show something like this:
+
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+
+
+
+let white=" "
+let black="#"
+let number=(prompt("how many lines?"));
+let toprint=""
+
+for(row=0;row<number;row++)
+{
+	for(line=0;line<number;line++)
+	{
+		if(line%2==0 && line<number && row%2==0){
+		toprint=toprint+white;
+		}
+		else if(line%2!=0 && line<number && row%2==0){
+		toprint=toprint+black;
+		}	
+		else if(line%2!=0 && line<number && row%2!=0){
+		toprint=toprint+white;
+		}
+		else if(line%2==0 && line<number && row%2!=0){
+		toprint=toprint+black;
+		}
+	}	
+	toprint=toprint+"\n";
+}
+console.log(toprint);
+
+-----------------------
+find out the min number:
+
+function min(a,b){
+	if (a<b){
+	return a;
+	}
+	else if (a>b){
+	return b;
+	}
+	else if (a==b){
+	return null;
+	}
+}
+
+console.log(min(3,6));
+
+-------------------------
+recursion
+
+function isEven(number) {
+  	if(number==0){
+	return true;
+	}
+	else if(number==1){
+	return false;
+	}
+	else if(number<0){
+	return isEven(-number);
+	}
+	else {
+	return number=(isEven(number-2));
+	}
+}
+
+console.log(isEven(23));
+
+---------------------------------
+find Bs
+
+
+function countBs(str, character)
+{
+var counter=0;
+for(len=str.length-1;len>-1;len=len-1)
+
+	if(len>=0)
+	{
+		if(str[len]==character)
+		{
+			counter=counter+1;
+		}	
+		else{}
+	}
+return counter;
+}
+
+console.log(countBs("ooa","a"));
+
+----------------------------------
+29 my array
+
+var my_array=[3,132,14];
+console.log(my_array[0]);
+var my_second= new Array();
+my_second.push(" hello "," world! ");
+console.log(my_second);
+
+oppure (senza "new". Nota: "array" produce errore "not defined", bisogna usare maiuscolo Array)
+
+var my_array=[3,132,14];
+console.log(my_array[0]);
+var my_second= Array();
+my_second.push(" hello "," world! ");
+console.log(my_second);
+
+
+--------------------------
+30 months
+
+var months=["jan","feb","mar","apr","mag","giu","lug","ago","set","ott","nov","dic"];
+number=Number(prompt("give me a number"));
+if (number<=0 || number>=13)
+{
+number=Number(prompt("no. New number please from 1-12"));
+number=number-1;
+}
+else
+{
+number=number-1;
+}
+console.log("your month is "+months[number]);
+
+-----------------------------------
+31 simple matrix
+
+var nestedArray = [[1,2,3], [4,5,6], [7,8,9]];
+console.log(nestedArray[0][0], nestedArray[1][2], nestedArray[2][1]);
+
+-------------------------------------
+32 food list
+
+
+let favoriteFood=["pizza","sushi","pasta"]
+console.log(favoriteFood)
+
+let pos = 1
+let n = 1
+
+let removedItems = favoriteFood.splice(pos, n)
+
+console.log(favoriteFood)
+// (the original array is changed)
+
+console.log(removedItems)
+// here are the removed items now
+
+console.log(favoriteFood[0].toUpperCase(),favoriteFood[1].toUpperCase(),favoriteFood[2].toUpperCase());
+
+--------------------------------------
+33 facts about sheep
+
+let sheepFacts=["they produce a lot of wool","they are soft animals","they can lift 12 times their own weight","they smell a bit like goats","they are your friends"];
+let out=0;let pos=0;
+let output="";
+
+function sheeps(){
+while (pos<=4)
+{
+output=output+sheepFacts[out]+"\n";
+out=out+1;pos=pos+1; 
+}return (output);
+sheeps();
+}
+console.log(sheeps());
+
+
+------------------------------------------
+34 simple function
+
+function simple(num)
+{
+return num=num*2;
+}
+console.log(simple(3));
+
+------------------------
+35 built-in array methods
+
+We declare and initialize a nest array and prefill it with null values: 
+let eggsInNest = new Array(10).fill(null);
+
+
+var alphabet = ["O", "U", "P", "H", "Q", "T", "Z", "Y", "E", "S", "F", "C" , "R", "V", "J", "L", "X", "A", "M", "G", "D", "I", "B", "W", "K","N"]
+alphabet.sort();
+console.log(alphabet[0].toLowerCase());
+
+-------------------------------
+36 smallest and largest
+
+var list=[6, 4, 1, 7, 2, 8, 3, 9, 11]
+var pos=0; 
+var smaller
+
+function smallest(){
+smaller=list[pos];
+
+for(count=0; count<list.length; count++)
+{
+	if (list[pos]<smaller)
+	{
+	smaller=list[pos];
+	pos++
+	}
+	else {pos++;}
+}
+return smaller;
+}
+
+console.log(smallest());
+
+------------------------------
+37 for loop in different containers
+
+const courses = ["Blockchain & Bitcoin 101", "Ethereum 101", 
+"JavaScript for Blockchain Developers", "12-Week Bootcamp", "Bitcoin Programming 101"];
+
+for (pos=0;pos<courses.length();pos++)
+{
+console.log(courses[pos]);
+}
+
+
+---------------------------------
+38 some counting features
+keine lust mehr
+
+-----------------------------------
+jquery_______________________
+
+<html>
+  <head>
+    <title>My first decentralized application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  </head>
+
+<body>
+  <p>this is my first DApp!</p>
+
+
+<input id="theinput" type="text" />
+<button id="thebutton">show text</button>
+
+            <script>
+            //$(function() { sarebbe l'abbreviazione di $(document).ready(function()
+            //viene usato per assicurarsi che il codice inizia solo quando il DOM è pronto per eseguire js
+            $( document ).ready(function(){
+                $("#thebutton").click(function(){
+                  var textinput = $("#theinput").val();
+                    console.log("clicked");
+                    alert(textinput);
+                });
+                    });
+
+            </script>
+
+
+
+</body>
+
+</html>
+
+---------------------------------------
+39 bakery object
+
+let bakery = {};
+bakery.croissant=2
+bakery.ciabatta=1
+bakery.bread=4
+bakery.donut=2
+bakery.baguette=3
+console.log(bakery)
+bakery.croissant=30
+
+---------------------------------------
+40 simple phone book
+
+let phoneBook = {};
+phoneBook.carlos=22334455
+phoneBook.gabba=977557897
+phoneBook.ivo=378865677
+phoneBook.fabrice=2783653858745
+
+numbersearch=prompt("Whose phone number are you searching for?");
+
+if (!(numbersearch in phoneBook))
+{console.log("not existing")};
+if (numbersearch in phoneBook)
+{
+result=phoneBook[numbersearch];
+console.log(result)
+};
+
+-------------------------------------
+41 object with flag colors
+
+flagObject = {"norway": ["red", "white", "blue"],
+"sweden": ["blue", "yellow"],
+"denmark": ["red", "white"],
+"finland": ["white", "blue"],
+"japan": ["red", "white"],
+"gabon": ["green", "yellow", "blue"],
+"United Kingdom": ["red", "blue", "white"],
+"chile": ["blue", "white", "red"]
+}
+Object.assign(flagObject, {italy: ["green","white","red"]}); 
+country=prompt("what countries colors do you wanna know?");
+result=flagObject[country];
+console.log(result)
+
+-----------------------------------------
+the sum of a range part 1
+
+
+function range (start,end) 
+{
+let array =[];
+let count=start;
+	for (start; count<(end+1); count++)
+	{
+	array.push(count);
+	};
+return array;
+};
+
+console.log(range(1,10));
+
+---------------------------------------------
+the sum of a range part 2
+
+
+function sumUp(range)
+	{
+	let sum=0;
+	let count=0;
+	for (range[0];count<(range.length+2);count++)
+		{
+		sum=sum+range.pop(count);
+		};
+	return sum;
+	};
+
+console.log(sumUp(range=[1,2,3]));
+
+----------------------------------------------
+reversing an array
+
+
+function reverseArray(array)
+{
+newarray= array.reverse();
+return newarray;
+};
+
+console.log(reverseArray([1,2,3]));
+
+
+function reverseArrayInPlace()
+{
+let arrayValue = [10,11,12,13,14,15];
+let newarray2 = [];
+
+for (let count=arrayValue.length-1;count>-1;count--)
+	{
+	topush=arrayValue[count];
+	newarray2.push(topush);
+	};
+return newarray2;
+};
+
+console.log(reverseArrayInPlace());
+
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
